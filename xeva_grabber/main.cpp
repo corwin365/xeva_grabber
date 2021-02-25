@@ -10,12 +10,15 @@ int grab_image(char CalPack[100], char OutFile[100]);
 /*parent routine*/
 int main(int argc, char** argv) {
 
-    //calib pack used to test: "C:\SDK\XC-(03-08-2020)-LG20000us_13917.xca"
-
     /* local variable definition */
     int ret;
 
-    /* call function */
+    /* testing */
+    //char CalPack[100] = "calib.xca";
+    //char OutFile[100] = "b.xpng";
+    //ret = grab_image(CalPack,OutFile);
+
+    /* call function using external arguments */
     ret = grab_image(argv[2],argv[1]);
 
     return 0;
