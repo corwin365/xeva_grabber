@@ -2,34 +2,34 @@
 #include "XCamera.h" // Xeneth SDK main header.
 #include "XFilters.h" // Xeneth SDK main header.
 
-
 /* function declaration */
 int grab_image(char CalPack[100], char OutFile[100]);
 
-int main() {
+
+
+/*parent routine*/
+int main(int argc, char** argv) {
+
+    //calib pack used to test: "C:\SDK\XC-(03-08-2020)-LG20000us_13917.xca"
 
     /* local variable definition */
-    char CalPack[100] = "XC-(03-08-2020)-LG20000us_13917.xca";
-    char OutFile[100] = "var5.xpng";
     int ret;
 
-    /* calling a function to get max value */
-    ret = grab_image(CalPack,OutFile);
-
+    /* call function */
+    ret = grab_image(argv[2],argv[1]);
 
     return 0;
 }
 
-
-
-
+/*function to routine*/
 
 
 int grab_image(char CalPack[100],char OutFile[100])
 {
+
     // Variables
-    XCHANDLE handle = 0;   // Handle to the camera
-    ErrCode  errorCode = 0; // Used to store returned errorCodes from the SDK functions.
+    XCHANDLE handle = 0;      // Handle to the camera
+    ErrCode  errorCode = 0;   // Used to store returned errorCodes from the SDK functions.
     word*    frameBuffer = 0; // 16-bit buffer to store the capture frame.
     dword    frameSize = 0;   // The size in bytes of the raw image.
 
